@@ -1,0 +1,22 @@
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row pb-2">
+      <div class="col col-sm-6">
+      </div>
+      <div class="col col-sm-6">
+        <div class="form-outline">
+          <input type="search" class="form-control" placeholder="eg. Fast, at least 3 stars, older than 2018"
+                 aria-label="Search" [ngModel]="query" (ngModelChange)="onKeyUp($event)" />
+        </div>
+      </div>
+    </div>
+    <div class="card mb-3" style="min-width: 450px; " *ngFor="let Movie of Movies">
+      <app-movie [Movie]="Movie" (rateMovie)="_rateMovie($event)"></app-movie>
+    </div>
+    <div class="row pb-2" *ngIf="Movies">
+      <div class="col col-sm-6">
+        <a class="btn btn-sm btn-outline-secondary" id="loadMore" (click)="LoadMoreClick()"> Load More </a>
+      </div>
+    </div>
+  </div>
+</div>

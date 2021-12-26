@@ -1,0 +1,6 @@
+<app-toolbar [TitleLabel]="title"
+             (tabSwitch)="TabSwitch($event)"></app-toolbar>
+<div class="spinner-border" role="status" *ngIf="loading"></div>
+<app-movies *ngIf="MovieData" [Movies]="MovieData" (SearchQuery)="Search($event)" (RateMovie)="_RateMovie($event)" (LoadMore)="_LoadMore()"></app-movies>
+
+

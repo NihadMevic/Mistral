@@ -1,0 +1,31 @@
+<div class="row g-0">
+  <div class="col-md-4">
+    <img src="{{Movie.imgUrl}}" class="card-img" alt="..." style=" max-height:440px">
+  </div>
+  <div class="col-md-8">
+    <div class="card-body">
+      <h5 class="card-title">{{ Movie.title }}</h5>
+      <p class="card-text"><small class="text-muted">Average rating: {{Movie.rating}}</small></p>
+      <p>
+        {{Movie.description}}<br />
+        Release date: {{Movie.releaseDate}}<br />
+        Cast:<br />
+        <a *ngFor="let Actor of Movie.cast">
+          {{Actor.name}}<br />
+        </a><br />
+        Your vote:
+      </p>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="Vote(1)"><img src="../../assets/star-fill.svg" style="width:8px" /></button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="Vote(2)"><img src="../../assets/star-fill.svg" style="width:8px" *ngFor="let star of [0,1]" /></button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="Vote(3)"><img src="../../assets/star-fill.svg" style="width:8px" *ngFor="let star of [0,1,2]" /></button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="Vote(4)"><img src="../../assets/star-fill.svg" style="width:8px" *ngFor="let star of [0,1,2,3]" /></button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="Vote(5)"><img src="../../assets/star-fill.svg" style="width:8px" *ngFor="let star of [0,1,2,3,4]" /></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
